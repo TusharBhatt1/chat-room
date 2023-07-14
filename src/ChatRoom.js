@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./App.css"
 import {getDatabase, ref,push,set ,onChildAdded} from "firebase/database"
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {app} from "./index"
 import {v4 as uuidv4} from 'uuid';
 import { useLocalStorage } from './useLocalStorage';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -30,10 +31,11 @@ export default function ChatRoom() {
  
   const provider = new GoogleAuthProvider();
 
-  const auth = getAuth();
+  const auth = getAuth(app);
   
 //  Goggle SignIn
-  const googleSignIn=()=>{ setIsloading(true)
+  const googleSignIn=()=>{ 
+    setIsloading(true)
     signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
