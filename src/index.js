@@ -4,11 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyAldpyHLC5ZZzgXLVa7RuhjrbCmeaMTcSo",
+  authDomain: "chat-room-dc6ea.firebaseapp.com",
+  databaseURL: "https://chat-room-dc6ea-default-rtdb.firebaseio.com",
+  projectId: "chat-room-dc6ea",
+  storageBucket: "chat-room-dc6ea.appspot.com",
+  messagingSenderId: "69358454462",
+  appId: "1:69358454462:web:3b031babae6c5d2da400ef"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <App />
-  </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
