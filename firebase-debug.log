@@ -1,0 +1,90 @@
+[debug] [2023-07-14T16:17:56.856Z] ----------------------------------------------------------------------
+[debug] [2023-07-14T16:17:56.875Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tushar Bhatt\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-07-14T16:17:56.876Z] CLI Version:   12.4.4
+[debug] [2023-07-14T16:17:56.876Z] Platform:      win32
+[debug] [2023-07-14T16:17:56.877Z] Node Version:  v20.2.0
+[debug] [2023-07-14T16:17:56.877Z] Time:          Fri Jul 14 2023 21:47:56 GMT+0530 (India Standard Time)
+[debug] [2023-07-14T16:17:56.877Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-14T16:17:56.882Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-07-14T16:17:57.102Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-14T16:17:57.102Z] > authorizing via signed-in user (tusharbhatt0135@gmail.com)
+[debug] [2023-07-14T16:17:57.103Z] [iam] checking project chat-room-dc6ea for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-14T16:17:57.104Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions [none]
+[debug] [2023-07-14T16:17:57.105Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions x-goog-quota-user=projects/chat-room-dc6ea
+[debug] [2023-07-14T16:17:57.105Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-14T16:17:57.777Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: Socket connection timeout
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-07-14T16:17:57.781Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-07-14T16:18:02.475Z] *** [apiv2] error from fetch(https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions, {"headers":{},"method":"POST","body":"{\"permissions\":[\"firebase.projects.get\",\"firebasehosting.sites.update\"]}"}): FetchError: request to https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions failed, reason: Socket connection timeout
+[debug] [2023-07-14T16:18:02.475Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/chat-room-dc6ea:testIamPermissions
+[debug] [2023-07-14T16:18:02.476Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chat-room-dc6ea [none]
+[debug] [2023-07-14T16:18:03.312Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chat-room-dc6ea 200
+[debug] [2023-07-14T16:18:03.312Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chat-room-dc6ea {"projectId":"chat-room-dc6ea","projectNumber":"69358454462","displayName":"chat-room","name":"projects/chat-room-dc6ea","resources":{"hostingSite":"chat-room-dc6ea","realtimeDatabaseInstance":"chat-room-dc6ea-default-rtdb"},"state":"ACTIVE","etag":"1_938d1f06-9f29-441a-b56c-23889d131bc8"}
+[info] 
+[info] === Deploying to 'chat-room-dc6ea'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-07-14T16:18:03.325Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions [none]
+[debug] [2023-07-14T16:18:03.325Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-07-14T16:18:05.254Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions 200
+[debug] [2023-07-14T16:18:05.254Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions {"name":"projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[chat-room-dc6ea]: beginning deploy... 
+[info] i  hosting[chat-room-dc6ea]: found 14 files in build 
+[debug] [2023-07-14T16:18:05.274Z] [hosting] uploading with 200 concurrency
+[debug] [2023-07-14T16:18:05.284Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2023-07-14T16:18:05.285Z] [hosting][hash queue][FINAL] {"max":3,"min":0,"avg":0,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":6}
+[debug] [2023-07-14T16:18:05.286Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610:populateFiles [none]
+[debug] [2023-07-14T16:18:05.286Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610:populateFiles {"files":{"/asset-manifest.json":"e823533579d8af5b60237e858d733bfb2206266a3de6153857bb23ec84bf2d54","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/index.html":"42dade925f13bbc49e51e09eea02e8430900f8595d46877e9fb4e2ff2d052c5f","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.d905cd97.css":"9d616614d1b6a8580cfecf47b3d9c73b013e2d1cbdba9ee50cf82ebe827ab77f","/static/css/main.d905cd97.css.map":"8fa9ca1d7b78cbd2b0e885410c1243a896e6323b3e79ec7afa49f856440bed81","/static/js/787.6ab663b5.chunk.js":"02871029a81bacafa2cb0f8a38d549bc22c1c16b927abb7f175f60ee595d64e8","/static/js/787.6ab663b5.chunk.js.map":"ba986d496487b66baa393a83831823669df8b865f48cefd37f6c067b1f5c561f","/static/js/main.b2b75750.js":"60d0730127a1e92f5fb4b02a204936e0964ebddc53980c275d6c1cea0f479d1e","/static/js/main.b2b75750.js.LICENSE.txt":"d7bfca2df6a341e3c06bd517884785fdda863e40af5391b1dafaa3aeb50f6bea","/static/js/main.b2b75750.js.map":"ecfe22f299c3e01db526a26e740b9de621d46c4a75ec1b7d03a42f6ded935467"}}
+[debug] [2023-07-14T16:18:06.264Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610:populateFiles 200
+[debug] [2023-07-14T16:18:06.264Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/chat-room-dc6ea/versions/c534614e5a611610/files"}
+[debug] [2023-07-14T16:18:06.265Z] [hosting][populate queue][FINAL] {"max":983,"min":983,"avg":983,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":983}
+[debug] [2023-07-14T16:18:06.265Z] [hosting] uploads queued: 0
+[debug] [2023-07-14T16:18:06.265Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1689351486265}
+[info] +  hosting[chat-room-dc6ea]: file upload complete 
+[debug] [2023-07-14T16:18:06.266Z] [hosting] deploy completed after 1009ms
+[debug] [2023-07-14T16:18:06.267Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "chat-room-dc6ea"
+    },
+    "version": "projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610"
+  }
+]
+[info] i  hosting[chat-room-dc6ea]: finalizing version... 
+[debug] [2023-07-14T16:18:06.272Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions/c534614e5a611610 updateMask=status%2Cconfig
+[debug] [2023-07-14T16:18:06.273Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions/c534614e5a611610 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2023-07-14T16:18:07.420Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions/c534614e5a611610 200
+[debug] [2023-07-14T16:18:07.420Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/versions/c534614e5a611610 {"name":"projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-07-14T16:14:39.680800Z","createUser":{"email":"tusharbhatt0135@gmail.com"},"finalizeTime":"2023-07-14T16:14:41.692039Z","finalizeUser":{"email":"tusharbhatt0135@gmail.com"}}
+[debug] [2023-07-14T16:18:07.420Z] [hosting] finalized version for chat-room-dc6ea:[object Object]
+[info] +  hosting[chat-room-dc6ea]: version finalized 
+[info] i  hosting[chat-room-dc6ea]: releasing new version... 
+[debug] [2023-07-14T16:18:07.423Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/channels/live/releases versionName=projects%2F69358454462%2Fsites%2Fchat-room-dc6ea%2Fversions%2Fc534614e5a611610
+[debug] [2023-07-14T16:18:07.423Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/channels/live/releases {}
+[debug] [2023-07-14T16:18:08.318Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/channels/live/releases 200
+[debug] [2023-07-14T16:18:08.319Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chat-room-dc6ea/channels/live/releases {"name":"projects/69358454462/sites/chat-room-dc6ea/channels/live/releases/1689351282234000","version":{"name":"projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-07-14T16:14:39.680800Z","createUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"},"finalizeTime":"2023-07-14T16:14:41.692039Z","finalizeUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"}},"type":"DEPLOY","releaseTime":"2023-07-14T16:14:42.234Z","releaseUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"}}
+[debug] [2023-07-14T16:18:08.319Z] [hosting] release: {"name":"projects/69358454462/sites/chat-room-dc6ea/channels/live/releases/1689351282234000","version":{"name":"projects/69358454462/sites/chat-room-dc6ea/versions/c534614e5a611610","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-07-14T16:14:39.680800Z","createUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"},"finalizeTime":"2023-07-14T16:14:41.692039Z","finalizeUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"}},"type":"DEPLOY","releaseTime":"2023-07-14T16:14:42.234Z","releaseUser":{"email":"tusharbhatt0135@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtdVuOFQ69KsHjvThWj3YSw3rYLZweowCA6iaD4fpKyfVE8"}}
+[info] +  hosting[chat-room-dc6ea]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/chat-room-dc6ea/overview
+[info] Hosting URL: https://chat-room-dc6ea.web.app
+[debug] [2023-07-14T16:18:14.601Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Tushar Bhatt\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.
